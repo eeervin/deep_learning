@@ -63,7 +63,7 @@ This dataset contains sounds from birds. These were recognized very different en
 - [x] Standard Deep Dreams with Inception   **Files: dreamerInception.ipynb**
 - [ ] Standard Deep Dreams with GANs
 - [ ] Hacking with good ideas (Octaves, better loss functions)
-- [x] Setting up datasets   **Files: Sounds.ipynb, Images.ipynb, imnetdl.py, sound.pkl**
+- [x] Setting up datasets   **Files: Sounds.ipynb, Dog_data_preprocess.ipynb, Dataset2_preproc.ipynb imnetdl.py, sound.pkl**
 - [ ] Retraining VGG to get new Dreams
 - [ ] Retraining Inception to get new Dreams
 - [ ] Training GAN to get new Dreams

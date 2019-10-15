@@ -76,7 +76,7 @@ global urlpath
 urlpath='./imnet/urls/'
 
 global imdatapath
-imdatapath='./imnet/imagenet_images/'
+imdatapath='./imnet/'
 
 global wordnetpath
 wordnetpath='./imnet/words.txt'
@@ -87,13 +87,7 @@ if __name__=='__main__':
     socket.setdefaulttimeout(20)
 
     #List of WordNet categories to download
-    namelist=['altar','viaduct','Roman building','temple','totem pole',
-              'windmill','artillery, heavy weapon, gun, ordnance','launcher, rocket launcher',
-              'atom bomb, atomic bomb, A-bomb, fission bomb, plutonium bomb','shotgun shell',
-              'automatic firearm, automatic gun, automatic weapon','revolver, six-gun, six-shooter',
-              'khukuri','broad arrow','helicopter, chopper, whirlybird, eggbeater',
-              'biplane','stealth fighter','airbus','hot-air balloon','motor scooter, scooter',
-              'ambulance','sports car, sport car','Model T','jeep, landrover','stock car']
+    namelist=['songbird, songster']
 
     pool = ThreadPool(8)
     #Reading WordNet ID data

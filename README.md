@@ -39,9 +39,17 @@ Each teammember set up a smaller dataset with categories that go well together i
 
 Fancy def comes here
 
-###Dataset2
+###Dataset 2 (Artificial)
 
-Fancy def comes here
+This dataset contains images from 25 categories taken out from ImageNet. Having different types, shapes and colors our intention is that this dataset might be able to create a rich visual Deep Dream. 
+Each category has at least 600 images but some of them has around 1000. Equalizing them might not be crucial in this usecase, therefore we haven't dropped any images yet. Preprocessing might differ depending on the used network, as a first approach we will resize every image to (244,244) size and normalize them. Some rotation or noise might be added later.
+The list of these categories can be found here:
+'altar','viaduct','Roman building','temple','totem pole','windmill','artillery, heavy weapon, gun, ordnance','launcher, rocket launcher','atom bomb, atomic bomb, A-bomb, fission bomb, plutonium bomb','shotgun shell','automatic firearm, automatic gun, automatic weapon','revolver, six-gun, six-shooter','khukuri','broad arrow','helicopter, chopper, whirlybird, eggbeater','biplane','stealth fighter','airbus','hot-air balloon','motor scooter, scooter','ambulance','sports car, sport car','Model T','jeep, landrover','stock car'
+
+Audio data is extracted from the FSDKaggle2018 dataset, from which we have chosen 20 categories. It contains around 5000 samples unequally distributed between the categories. As mentioned above no equalization happens here. Preprocessing invloves standardization and spectrum generation, on which we run our CNN networks.
+The list of these categories can be found here:
+"Acoustic_guitar", "Bus", "Chime", "Computer_keyboard","Cowbell", "Drawer_open_or_close", "Fireworks", "Glockenspiel", "Gong", "Gunshot_or_gunfire", "Keys_jangling", "Knock", "Microwave_oven","Scissors", "Shatter", "Snare_drum", "Squeak", "Tearing", "Telephone", "Writing"
+
 
 ###Dataset3
 
@@ -54,7 +62,7 @@ Fancy def comes here
 - [x] Standard Deep Dreams with Inception
 - [ ] Standard Deep Dreams with GANs
 - [ ] Hacking with good ideas (Octaves, better loss functions)
-- [ ] Setting up datasets
+- [x] Setting up datasets
 - [ ] Retraining VGG to get new Dreams
 - [ ] Retraining Inception to get new Dreams
 - [ ] Training GAN to get new Dreams
@@ -66,10 +74,9 @@ Fancy def comes here
 - [ ] Cleaning up code, packing it all together
 - [ ] Final documentation
 
-
+<!--
 ## Authors
-
 * **Name1** - *Worked on.....* - [gitname](https://github.com/gitname)
 * **Name2** - *Worked on.....* - [gitname](https://github.com/gitname)
 * **Name3** - *Worked on.....* - [gitname](https://github.com/gitname)
-
+!-->

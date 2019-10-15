@@ -1,3 +1,8 @@
+"""
+Script for downloading imagenet synsets based on category name.
+
+"""
+
 import urllib.request
 import numpy as np
 import pandas as pd
@@ -7,18 +12,25 @@ from multiprocessing.dummy import Pool as ThreadPool
 
 
 def name2wordid(namelist,vocab):
+    #Find WordNet ID from a list of names
     iddict={}
     for name in namelist:
         iddict[name]=vocab.loc[vocab[1] == name][0].to_numpy()
     return iddict
 
 def urlgen(iddict):
+    '''
+    Generate URLs from IDs.
+    Requires separate tabulated txt files in urlpath, with file names refering to the WordNet ID.
+    The text file should have a column of file name, and url in this order.
+    '''
+    global urlpath
     urldict={}
     for name, wids in iddict.items():
         urls=[]
         filenames=[]
         for wid in wids:
-            path='./imnet/urls/'+wid+".txt"
+            path=urlpath+wid+".txt"
             if os.path.exists(path):
                 with open(path,"r", encoding='utf-8') as f:
                     lines=f.readlines()
@@ -30,31 +42,66 @@ def urlgen(iddict):
     return urldict
 
 def downloadone(url,fname,folderpath):
+    '''
+    Download file from url and save it as folderpath/filename.
+    '''
     try:
         urllib.request.urlretrieve(url,folderpath + '/' + fname + '.' + url.split('.')[-1][:-1])
         return 1
     except:
-        print(fname + ' failed.')
+        #On failure remove junk data.
+        if os.path.exists(folderpath + '/' + fname + '.' + url.split('.')[-1][:-1]):
+            os.remove(folderpath + '/' + fname + '.' + url.split('.')[-1][:-1])
         return 0
 
 
 def downloadset(urldict,pool):
+    '''
+    Get data from a dict of URLs using multiple workers in pool (ThreadPool).
+    '''
+    global imdatapath
     for name, data in urldict.items():
-        folderpath='./imnet/imagenet_images/'+name
+        #Remove commas from category names when naming folders.
+        folderpath=imdatapath+name.replace(",","")
         if not os.path.exists(folderpath):
             os.mkdir(folderpath)
         results = pool.starmap(downloadone, zip(data['url'], data['fname'],[folderpath for i in range(len(data['url']))]))
-    return results
-if __name__=='__main__':
-    socket.setdefaulttimeout(1)
+        success=np.sum(np.array(results))
+        all=len(results)
+        print("{0} images downloaded. {1} / {2} succeeded.".format(name,success,all))
 
-    namelist=['window']
-    pool = ThreadPool(300)
-    vocab=pd.read_csv('./imnet/words.txt', sep='\t', engine='python', header=None)
-    print(vocab.head())
+
+#Setting global path variables
+global urlpath
+urlpath='./imnet/urls/'
+
+global imdatapath
+imdatapath='./imnet/imagenet_images/'
+
+global wordnetpath
+wordnetpath='./imnet/words.txt'
+
+if __name__=='__main__':
+    #ThreadPools should be created under main guards to avoid freezing errors on my system config (Win10, Python 3.7)
+
+    socket.setdefaulttimeout(20)
+
+    #List of WordNet categories to download
+    namelist=['altar','viaduct','Roman building','temple','totem pole',
+              'windmill','artillery, heavy weapon, gun, ordnance','launcher, rocket launcher',
+              'atom bomb, atomic bomb, A-bomb, fission bomb, plutonium bomb','shotgun shell',
+              'automatic firearm, automatic gun, automatic weapon','revolver, six-gun, six-shooter',
+              'khukuri','broad arrow','helicopter, chopper, whirlybird, eggbeater',
+              'biplane','stealth fighter','airbus','hot-air balloon','motor scooter, scooter',
+              'ambulance','sports car, sport car','Model T','jeep, landrover','stock car']
+
+    pool = ThreadPool(8)
+    #Reading WordNet ID data
+    vocab=pd.read_csv(wordnetpath, sep='\t', engine='python', header=None)
+    #Extracting WordNet IDs
     iddict=name2wordid(namelist,vocab)
-    print(iddict)
     del vocab
+    #Generating URL dicts
     urldict=urlgen(iddict)
-    results=downloadset(urldict,pool)
-    print(results)
+    #Downloading data
+    downloadset(urldict,pool)

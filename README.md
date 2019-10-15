@@ -37,7 +37,7 @@ Each teammember set up a smaller dataset with categories that go well together i
 
 ###Dataset1
 
-Fancy def comes here
+This dataset contains images of popular dog species and various dog sounds, creating a perfectly matching theme for four-legged Deep Dreams.
 
 ###Dataset 2 (Artificial)
 
@@ -58,12 +58,12 @@ This dataset contains sounds from birds. These were recognized very different en
 
 ## Milestones
 
-- [x] Style transfer with VGG
-- [x] Standard Deep Dreams with VGG
-- [x] Standard Deep Dreams with Inception
+- [x] Style transfer with VGG    **Files: VGG19deepstyle.ipynb**
+- [x] Standard Deep Dreams with VGG  **Files: dreamerVGG.ipynb**
+- [x] Standard Deep Dreams with Inception   **Files: dreamerInception.ipynb**
 - [ ] Standard Deep Dreams with GANs
 - [ ] Hacking with good ideas (Octaves, better loss functions)
-- [x] Setting up datasets
+- [x] Setting up datasets   **Files: Sounds.ipynb, Images.ipynb, imnetdl.py, sound.pkl**
 - [ ] Retraining VGG to get new Dreams
 - [ ] Retraining Inception to get new Dreams
 - [ ] Training GAN to get new Dreams

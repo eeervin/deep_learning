@@ -51,9 +51,10 @@ The list of these categories can be found here:
 "Acoustic_guitar", "Bus", "Chime", "Computer_keyboard","Cowbell", "Drawer_open_or_close", "Fireworks", "Glockenspiel", "Gong", "Gunshot_or_gunfire", "Keys_jangling", "Knock", "Microwave_oven","Scissors", "Shatter", "Snare_drum", "Squeak", "Tearing", "Telephone", "Writing"
 
 
-###Dataset3
+###Dataset3 (Bird sounds)
 
-Fancy def comes here
+This dataset contains sounds from birds. These were recognized very different environment so we hear different noises in these files. This dataset was the development data for the bird audio detection challenge on http://machine-listening.eecs.qmul.ac.uk site. It contains about 8000 wav files. For the testing the first 100 row stored in pkl file, so it can be loaded in some seconds.
+
 
 ## Milestones
 

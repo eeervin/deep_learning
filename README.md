@@ -67,7 +67,7 @@ Some sample images are provided, we will use this dataset to create and test gen
 - [x] Setting up datasets   **Files: Sounds.ipynb, Dog_data_preprocess.ipynb, Dataset2_preproc.ipynb imnetdl.py, sound.pkl**
 - [ ] ~~Retraining VGG to get new Dreams~~
 - [x] Retraining Inception to get new Dreams
-- [ ] Training GANs/AEs/Smaller CNNs to generate new Dreams -- In progress --
+- [ ] Training GANs/AEs/Smaller CNNs to generate new Dreams -- In progress -- **Files: GANDream , t81_558_class_07_2_Keras_gan.ipynb**
 - [ ] ~~Training own CNN architectures to get new Dreams~~
 - [ ] ~~Training own CNN architectures to get audio style-transfer~~
 - [ ] ~~Training own CNN architectures to get audio Dreams~~

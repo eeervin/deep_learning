@@ -65,13 +65,13 @@ Some sample images are provided, we will use this dataset to create and test gen
 - [ ] Standard Deep Dreams with GANs
 - [x] Hacking with good ideas (Octaves, better resolution)
 - [x] Setting up datasets   **Files: Sounds.ipynb, Dog_data_preprocess.ipynb, Dataset2_preproc.ipynb imnetdl.py, sound.pkl**
-~~- [ ] Retraining VGG to get new Dreams~~
+- [ ] ~~Retraining VGG to get new Dreams~~
 - [x] Retraining Inception to get new Dreams
 - [ ] Training GANs/AEs/Smaller CNNs to generate new Dreams -- In progress --
-~~- [ ] Training own CNN architectures to get new Dreams~~
-~~- [ ] Training own CNN architectures to get audio style-transfer~~
-~~- [ ] Training own CNN architectures to get audio Dreams~~
-~~- [ ] Generating 2in1 Audio-visual dreams~~
+- [ ] ~~Training own CNN architectures to get new Dreams~~
+- [ ] ~~Training own CNN architectures to get audio style-transfer~~
+- [ ] ~~Training own CNN architectures to get audio Dreams~~
+- [ ] ~~Generating 2in1 Audio-visual dreams~~
 - [x] Advanced dreams with guide images
 - [ ] Using multiple guide images
 - [ ] Exploring even more complex loss definitions

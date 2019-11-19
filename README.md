@@ -1,6 +1,6 @@
-# Multimodal Deep Dreams
+# New Deep Dreams
 
-This project aims to create Deep Dreams with correlating audio-visual filters while digging deeper the hidden behaviour of CNNs.
+This project aims to create Deep Dreams with modified methods, inspired by Tensorflow Lucid researches, and trying to implement generative solutions to make generating dreams less computationally demanding.
 
 ## Methodology
 
@@ -16,44 +16,45 @@ of these methods to achieve greater performance and increase our knowledge.
 Using the pretrained low-level convolutional-layers as basic (but hopefully good) feature extractors, complex formations could be
 learned by retraining the top levels of these networks. The team focuses on VGG, Inception networks.
 
-### Using GANs
+### New methods
 
-As a side-effect of latent-space analysis generative adversarial networks are able to provide various dreamlike filters which
-could be applied to images to create new Deep Dreams.
+Using some tricks while doing gradient descent should result in various deep-dreams and representation extractions. Some of these might help us understand the organization and information handling of popular network architectures.
 
-### Audio
+### Using generative methods
 
-Audio style-transfers and Deep Dreams are not as popular as their visual siblings, therefore we would like to put some effort
-into the topic and come up with basic Mel spectrum based solutions.
+By training generative networks one should be able to use a smaller network to apply one specific deep dream filter to an image, thus making compact dream generators is one of our side-goals.
 
-### Video
+### ~~Audio~~
 
-As the final product of our project we will use Deep Dream on video and audio channels of a short movie hopefully getting
-visual and musical dreams at the same time.
+~~Our group planned to do some audio-styletransfers and dreams. Due to the fact that our project has a deadline and we have finite time, we're heading to a direction, which could involve more interesting ideas and solutions for now.~~
 
 ## Data
 
-Each teammember set up a smaller dataset with categories that go well together in style.
-
-###Dataset1
-
-This dataset contains images of popular dog species and various dog sounds, creating a perfectly matching theme for four-legged Deep Dreams.
-
-###Dataset 2 (Artificial)
+### Dataset 1 (Artificial)
 
 This dataset contains images from 25 categories taken out from ImageNet. Having different types, shapes and colors our intention is that this dataset might be able to create a rich visual Deep Dream. 
 Each category has at least 600 images but some of them has around 1000. Equalizing them might not be crucial in this usecase, therefore we haven't dropped any images yet. Preprocessing might differ depending on the used network, as a first approach we will resize every image to (244,244) size and normalize them. Some rotation or noise might be added later.
 The list of these categories can be found here:
 'altar','viaduct','Roman building','temple','totem pole','windmill','artillery, heavy weapon, gun, ordnance','launcher, rocket launcher','atom bomb, atomic bomb, A-bomb, fission bomb, plutonium bomb','shotgun shell','automatic firearm, automatic gun, automatic weapon','revolver, six-gun, six-shooter','khukuri','broad arrow','helicopter, chopper, whirlybird, eggbeater','biplane','stealth fighter','airbus','hot-air balloon','motor scooter, scooter','ambulance','sports car, sport car','Model T','jeep, landrover','stock car'
 
-Audio data is extracted from the FSDKaggle2018 dataset, from which we have chosen 20 categories. It contains around 5000 samples unequally distributed between the categories. As mentioned above no equalization happens here. Preprocessing invloves standardization and spectrum generation, on which we run our CNN networks.
-The list of these categories can be found here:
-"Acoustic_guitar", "Bus", "Chime", "Computer_keyboard","Cowbell", "Drawer_open_or_close", "Fireworks", "Glockenspiel", "Gong", "Gunshot_or_gunfire", "Keys_jangling", "Knock", "Microwave_oven","Scissors", "Shatter", "Snare_drum", "Squeak", "Tearing", "Telephone", "Writing"
+### Dataset 2 [Natural Images](https://www.kaggle.com/prasunroy/natural-images)
 
+Natural images is a dataset of 8 categories 'airplane', 'cat', 'car', 'dog', 'flower', 'fruit', 'motorbike', 'person'. We wanted to have a relatively small dataset of not so large images (6899) to generate a specific kind of DeepDreams on them, we did so, thus we have Dataset 3.
+This dataset used in **"Effects of Degradations on Deep Neural Network Architectures"** as a benchmark, the dataset was assembled by **Roy, Prasun and Ghosh, Subhankar and Bhattacharya, Saumik and Pal, Umapada**
 
-###Dataset3 (Bird sounds)
+### Dataset 3 (Natural Dreams)
 
-This dataset contains sounds from birds. These were recognized very different environment so we hear different noises in these files. This dataset was the development data for the bird audio detection challenge on http://machine-listening.eecs.qmul.ac.uk site. It contains about 8000 wav files. For the testing the first 100 row stored in pkl file, so it can be loaded in some seconds.
+This dataset was created from Dataset 2 with the following parameters of DeepDream generation:
+-Model: InceptionV3, imagenet weights
+-Image resize: 299x299
+-Maplist (guide activations): None
+-Number of recursion: 2
+-Rescale factor: 0.85
+-Blend: 0.15
+-Iterations per recursion: [100,100,100]
+-Step size: 0.02
+
+Some sample images are provided, we will use this dataset to create and test generative models.
 
 
 ## Milestones
@@ -62,17 +63,19 @@ This dataset contains sounds from birds. These were recognized very different en
 - [x] Standard Deep Dreams with VGG  **Files: dreamerVGG.ipynb**
 - [x] Standard Deep Dreams with Inception   **Files: dreamerInception.ipynb**
 - [ ] Standard Deep Dreams with GANs
-- [ ] Hacking with good ideas (Octaves, better loss functions)
+- [x] Hacking with good ideas (Octaves, better resolution)
 - [x] Setting up datasets   **Files: Sounds.ipynb, Dog_data_preprocess.ipynb, Dataset2_preproc.ipynb imnetdl.py, sound.pkl**
-- [ ] Retraining VGG to get new Dreams
-- [ ] Retraining Inception to get new Dreams
-- [ ] Training GAN to get new Dreams
-- [ ] Training own CNN architectures to get new Dreams
-- [ ] Training own CNN architectures to get audio style-transfer
-- [ ] Training own CNN architectures to get audio Dreams
-- [ ] Generating 2in1 Audio-visual dreams
-- [ ] *Optional - Representation analysis and manipulation*
-- [ ] Cleaning up code, packing it all together
+- [ ] ~~Retraining VGG to get new Dreams~~
+- [x] Retraining Inception to get new Dreams
+- [ ] Training GANs/AEs/Smaller CNNs to generate new Dreams -- In progress --
+- [ ] ~~Training own CNN architectures to get new Dreams~~
+- [ ] ~~Training own CNN architectures to get audio style-transfer~~
+- [ ] ~~Training own CNN architectures to get audio Dreams~~
+- [ ] ~~Generating 2in1 Audio-visual dreams~~
+- [x] Advanced dreams with guide images
+- [ ] Using multiple guide images
+- [ ] Exploring even more complex loss definitions
+- [ ] Cleaning up code, packing it all together (Done for Stage 2)
 - [ ] Final documentation
 
 <!--

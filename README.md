@@ -44,16 +44,16 @@ This dataset used in **"Effects of Degradations on Deep Neural Network Architect
 
 ### Dataset 3 (Natural Dreams)
 
-This dataset was created from Dataset 2 with the following parameters of DeepDream generation:
--Model: InceptionV3, imagenet weights
--Image resize: 299x299
--Maplist (guide activations): None
--Number of recursion: 2
--Rescale factor: 0.85
--Blend: 0.15
--Iterations per recursion: [100,100,100]
--Step size: 0.02
-
+This dataset was created from Dataset 2 with the following parameters of DeepDream generation:  
+- Model: InceptionV3, imagenet weights  
+- Image resize: 299x299  
+- Maplist (guide activations): None  
+- Number of recursion: 2  
+- Rescale factor: 0.85  
+- Blend: 0.15  
+- Iterations per recursion: [100,100,100]  
+- Step size: 0.02  
+  
 Some sample images are provided, we will use this dataset to create and test generative models.
 
 
@@ -63,16 +63,16 @@ Some sample images are provided, we will use this dataset to create and test gen
 - [x] Standard Deep Dreams with VGG  **Files: dreamerVGG.ipynb**
 - [x] Standard Deep Dreams with Inception   **Files: dreamerInception.ipynb**
 - [ ] Standard Deep Dreams with GANs
-- [x] Hacking with good ideas (Octaves, better resolution)
+- [x] Hacking with good ideas (Octaves, better resolution) **Files: DeepDream.ipynb**
 - [x] Setting up datasets   **Files: Sounds.ipynb, Dog_data_preprocess.ipynb, Dataset2_preproc.ipynb imnetdl.py, sound.pkl**
 - [ ] ~~Retraining VGG to get new Dreams~~
-- [x] Retraining Inception to get new Dreams
+- [x] Retraining Inception to get new Dreams **Files: Retrain_InceptionV3.ipynb, dataset_artificial_retrained.hdf5**
 - [ ] Training GANs/AEs/Smaller CNNs to generate new Dreams -- In progress -- **Files: GANDream.ipynb , t81_558_class_07_2_Keras_gan.ipynb**
 - [ ] ~~Training own CNN architectures to get new Dreams~~
 - [ ] ~~Training own CNN architectures to get audio style-transfer~~
 - [ ] ~~Training own CNN architectures to get audio Dreams~~
 - [ ] ~~Generating 2in1 Audio-visual dreams~~
-- [x] Advanced dreams with guide images
+- [x] Advanced dreams with guide images **Files: DeepDream.ipynb**
 - [ ] Using multiple guide images
 - [ ] Exploring even more complex loss definitions
 - [ ] Cleaning up code, packing it all together (Done for Stage 2)
@@ -84,6 +84,19 @@ Some sample images are provided, we will use this dataset to create and test gen
 ### GAN
 
 The most popular field where we can use GANs is 'face-creation'. You can find lot of example and tutorial for generated random faces. In this project the generator learn the relevant points on face images. We give for this network deep dream images for training. It has big potential, but the first attempt it learnt the main object of the image and just a little bit of the dream. The second problem is GAN-s not too good with big images, to solve these problems would be a good task for the next few weeks.
+
+### HD images
+
+With some research made on popular DeepDream methods, we decided to do a "rescale and blend" type of optimization, with small tiles taken out of randomly rolled images to have input sizes we are able to handle and avoid having sharp stripes.  
+We start with the lowest resolution (smallest) image, to draw the outline of largescale features, then proceed to higher resolutions.  
+Here, we present some of the results made with different filter sets of mixed5 and mixed3 layers.
+
+![HD_image](https://raw.githubusercontent.com/eeervin/deep_learning/master/results/HD_dreams/result1.jpg "HD_image")
+
+![HD_image](https://raw.githubusercontent.com/eeervin/deep_learning/master/results/HD_dreams/result2_1.jpg "HD_image")
+
+![HD_image](https://raw.githubusercontent.com/eeervin/deep_learning/master/results/HD_dreams/result2_2.jpg "HD_image")
+
 <!--
 ## Authors
 * **Name1** - *Worked on.....* - [gitname](https://github.com/gitname)

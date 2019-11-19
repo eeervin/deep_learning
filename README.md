@@ -78,6 +78,12 @@ Some sample images are provided, we will use this dataset to create and test gen
 - [ ] Cleaning up code, packing it all together (Done for Stage 2)
 - [ ] Final documentation
 
+
+## Results
+
+### GAN
+
+The most popular field where we can use GANs is 'face-creation'. You can find lot of example and tutorial for generated random faces. In this project the generator learn the relevant points on face images. We give for this network deep dream images for training. It has big potential, but the first attempt it learnt the main object of the image and just a little bit of the dream. The second problem is GAN-s not too good with big images, to solve these problems would be a good task for the next few weeks.
 <!--
 ## Authors
 * **Name1** - *Worked on.....* - [gitname](https://github.com/gitname)

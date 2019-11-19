@@ -107,7 +107,7 @@ As a base image we used our University.
 
 Adding some unguided dreams would look like this:
 
-![HD_image](https://raw.githubusercontent.com/eeervin/deep_learning/master/results/Guided_dreams/bme_unguided.jpg "BME_Unguided")
+![HD_image](https://raw.githubusercontent.com/eeervin/deep_learning/master/results/Guided_dreams/bme_unguided.png "BME_Unguided")
 
 Then comes a guide image, for example these traditional ornaments:
 
@@ -115,7 +115,7 @@ Then comes a guide image, for example these traditional ornaments:
 
 And using this as a guide image, but changing nothing else, our dream changes:
 
-![HD_image](https://raw.githubusercontent.com/eeervin/deep_learning/master/results/Guided_dreams/bme_matyo.jpg "BME_Matyo")
+![HD_image](https://raw.githubusercontent.com/eeervin/deep_learning/master/results/Guided_dreams/bme_matyo.png "BME_Matyo")
 
 Surprisingly if more basic features are used, we need to choose lower level layers, to get a good representation.
 When using a beehive, like the upcoming one, layers like merge5 activated filters belonging to bee-parts, or entire bugs, while the hexagonal holes were represented in lower layers, therefore we moved to merge2.
@@ -124,7 +124,7 @@ When using a beehive, like the upcoming one, layers like merge5 activated filter
 
 The result is pretty nice:
 
-![HD_image](https://raw.githubusercontent.com/eeervin/deep_learning/master/results/Guided_dreams/beeme.jpg "BME_Bee")
+![HD_image](https://raw.githubusercontent.com/eeervin/deep_learning/master/results/Guided_dreams/beeme.png "BME_Bee")
 
 Future work on this topic is needed, and we plan to use these weights locally not just on a filter level.
 

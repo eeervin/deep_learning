@@ -54,8 +54,8 @@ This dataset was created from Dataset 2 with the following parameters of DeepDre
 - Iterations per recursion: [100,100,100]  
 - Step size: 0.02  
   
-Some sample images are provided, we will use this dataset to create and test generative models.
-
+Some sample images are provided [here](https://github.com/eeervin/deep_learning/tree/master/results/Dataset_NaturalDreams), we will use this dataset to create and test generative models.
+![Sample](https://raw.githubusercontent.com/eeervin/deep_learning/master/results/Dataset_NaturalDreams/flower/flower_0012.jpg "Yes, that's a flower")
 
 ## Milestones
 
@@ -80,6 +80,7 @@ Some sample images are provided, we will use this dataset to create and test gen
 
 
 ## Results
+
 
 ### GAN
 

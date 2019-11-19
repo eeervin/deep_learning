@@ -26,7 +26,7 @@ By training generative networks one should be able to use a smaller network to a
 
 ### ~~Audio~~
 
-~~Our group planned to do some audio-styletransfers and dreams. Due to the fact that our project has a deadline and we have finite time, we're heading to a direction, which could involve more interesting ideas and solutions for now.~
+~~Our group planned to do some audio-styletransfers and dreams. Due to the fact that our project has a deadline and we have finite time, we're heading to a direction, which could involve more interesting ideas and solutions for now.~~
 
 ## Data
 
@@ -67,7 +67,7 @@ Some sample images are provided, we will use this dataset to create and test gen
 - [x] Setting up datasets   **Files: Sounds.ipynb, Dog_data_preprocess.ipynb, Dataset2_preproc.ipynb imnetdl.py, sound.pkl**
 ~~- [ ] Retraining VGG to get new Dreams~~
 - [x] Retraining Inception to get new Dreams
-- [ ] Training GAN to get new Dreams
+- [ ] Training GANs/AEs/Smaller CNNs to generate new Dreams -- In progress --
 ~~- [ ] Training own CNN architectures to get new Dreams~~
 ~~- [ ] Training own CNN architectures to get audio style-transfer~~
 ~~- [ ] Training own CNN architectures to get audio Dreams~~
@@ -75,7 +75,6 @@ Some sample images are provided, we will use this dataset to create and test gen
 - [x] Advanced dreams with guide images
 - [ ] Using multiple guide images
 - [ ] Exploring even more complex loss definitions
-- [ ] Teaching GANs/AEs/Smaller CNNs to generate dreams
 - [ ] Cleaning up code, packing it all together (Done for Stage 2)
 - [ ] Final documentation
 

@@ -97,6 +97,38 @@ Here, we present some of the results made with different filter sets of mixed5 a
 
 ![HD_image](https://raw.githubusercontent.com/eeervin/deep_learning/master/results/HD_dreams/result2_2.jpg "HD_image")
 
+
+### Guided Dreams
+
+As a crossover of DeepStyle and DeepDream, we created some Guided Dreams. In this case the gradient ascent is weighted with the previously acquired activations of a guide image (it could be a batch too, if needed). For the images presented bellow, we used a modified loss function, and used the normalized values of activations on each corresponding filter of the dream layers.
+
+As a base image we used our University.
+![HD_image](https://raw.githubusercontent.com/eeervin/deep_learning/master/results/Guided_dreams/bme.jpg "BME")
+
+Adding some unguided dreams would look like this:
+
+![HD_image](https://raw.githubusercontent.com/eeervin/deep_learning/master/results/Guided_dreams/bme_unguided.jpg "BME_Unguided")
+
+Then comes a guide image, for example these traditional ornaments:
+
+![HD_image](https://raw.githubusercontent.com/eeervin/deep_learning/master/results/Guided_dreams/matyo.jpg "Guide_matyo")
+
+And using this as a guide image, but changing nothing else, our dream changes:
+
+![HD_image](https://raw.githubusercontent.com/eeervin/deep_learning/master/results/Guided_dreams/bme_matyo.jpg "BME_Matyo")
+
+Surprisingly if more basic features are used, we need to choose lower level layers, to get a good representation.
+When using a beehive, like the upcoming one, layers like merge5 activated filters belonging to bee-parts, or entire bugs, while the hexagonal holes were represented in lower layers, therefore we moved to merge2.
+
+![HD_image](https://raw.githubusercontent.com/eeervin/deep_learning/master/results/Guided_dreams/beehive.jpg "Guide_Beehive")
+
+The result is pretty nice:
+
+![HD_image](https://raw.githubusercontent.com/eeervin/deep_learning/master/results/Guided_dreams/beeme.jpg "BME_Bee")
+
+Future work on this topic is needed, and we plan to use these weights locally not just on a filter level.
+
+
 <!--
 ## Authors
 * **Name1** - *Worked on.....* - [gitname](https://github.com/gitname)

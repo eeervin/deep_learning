@@ -2,6 +2,10 @@
 
 This project aims to create Deep Dreams with modified methods, inspired by Tensorflow Lucid researches, and trying to implement generative solutions to make generating dreams less computationally demanding.
 
+## Usage
+
+pl ide írj be doksit, minden filehoz amit érdemes használni, hogy kb mi az, meg ilyesmik
+
 ## Methodology
 
 The authors aim to create new Deep Dreams with the following tools and architectures.
@@ -67,7 +71,7 @@ Some sample images are provided [here](https://github.com/eeervin/deep_learning/
 - [x] Setting up datasets   **Files: Sounds.ipynb, Dog_data_preprocess.ipynb, Dataset2_preproc.ipynb imnetdl.py, sound.pkl**
 - [ ] ~~Retraining VGG to get new Dreams~~ (No usable results)
 - [x] Retraining Inception to get new Dreams **Files: Retrain_InceptionV3.ipynb, dataset_artificial_retrained.hdf5**
-- [ ] Training GANs/AEs/Smaller CNNs to generate new Dreams -- In progress -- **Files: GANDream.ipynb , t81_558_class_07_2_Keras_gan.ipynb**
+- [x] Training GANs/AEs/Smaller CNNs to generate new Dreams **Files: GANDream.ipynb , t81_558_class_07_2_Keras_gan.ipynb**
 - [ ] ~~Training own CNN architectures to get new Dreams~~ (No usable results)
 - [ ] ~~Training own CNN architectures to get audio style-transfer~~ (Audio part of the project dropped)
 - [ ] ~~Training own CNN architectures to get audio Dreams~~ (Audio part of the project dropped)

@@ -1,10 +1,12 @@
 # New Deep Dreams
 
 This project aims to create Deep Dreams with modified methods, inspired by Tensorflow Lucid researches, and trying to implement generative solutions to make generating dreams less computationally demanding.
+The documentation of this project is Deeplearning_HW.pdf.
 
 ## Usage
 
-pl ide írj be doksit, minden filehoz amit érdemes használni, hogy kb mi az, meg ilyesmik
+- For Deep Dreaming run DeepDream.ipynb, use for this google collaboratory and before it upload resources to your google drive folder.
+- For using GAN to Deep Dreaming run GANDream.ipynb, also use google colab and for a dreams folder put some deep dreamed image, the output images will be in a folder with output name.
 
 ## Methodology
 

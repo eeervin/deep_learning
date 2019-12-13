@@ -62,21 +62,21 @@ Some sample images are provided [here](https://github.com/eeervin/deep_learning/
 - [x] Style transfer with VGG    **Files: VGG19deepstyle.ipynb**
 - [x] Standard Deep Dreams with VGG  **Files: dreamerVGG.ipynb**
 - [x] Standard Deep Dreams with Inception   **Files: dreamerInception.ipynb**
-- [ ] Standard Deep Dreams with GANs
+- [ ] ~~Standard Deep Dreams with GANs~~
 - [x] Hacking with good ideas (Octaves, better resolution) **Files: DeepDream.ipynb**
 - [x] Setting up datasets   **Files: Sounds.ipynb, Dog_data_preprocess.ipynb, Dataset2_preproc.ipynb imnetdl.py, sound.pkl**
-- [ ] ~~Retraining VGG to get new Dreams~~
+- [ ] ~~Retraining VGG to get new Dreams~~ (No usable results)
 - [x] Retraining Inception to get new Dreams **Files: Retrain_InceptionV3.ipynb, dataset_artificial_retrained.hdf5**
 - [ ] Training GANs/AEs/Smaller CNNs to generate new Dreams -- In progress -- **Files: GANDream.ipynb , t81_558_class_07_2_Keras_gan.ipynb**
-- [ ] ~~Training own CNN architectures to get new Dreams~~
-- [ ] ~~Training own CNN architectures to get audio style-transfer~~
-- [ ] ~~Training own CNN architectures to get audio Dreams~~
+- [ ] ~~Training own CNN architectures to get new Dreams~~ (No usable results)
+- [ ] ~~Training own CNN architectures to get audio style-transfer~~ (Audio part of the project dropped)
+- [ ] ~~Training own CNN architectures to get audio Dreams~~ (Audio part of the project dropped)
 - [ ] ~~Generating 2in1 Audio-visual dreams~~
 - [x] Advanced dreams with guide images **Files: DeepDream.ipynb**
-- [ ] Using multiple guide images
-- [ ] Exploring even more complex loss definitions
-- [ ] Cleaning up code, packing it all together (Done for Stage 2)
-- [ ] Final documentation
+- [ ] ~~Using multiple guide images~~
+- [ ] ~~Exploring even more complex loss definitions~~
+- [x] Cleaning up code, packing it all together
+- [x] Final documentation
 
 
 ## Results

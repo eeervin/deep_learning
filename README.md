@@ -1,12 +1,15 @@
 # New Deep Dreams
 
 This project aims to create Deep Dreams with modified methods, inspired by Tensorflow Lucid researches, and trying to implement generative solutions to make generating dreams less computationally demanding.
-The documentation of this project is Deeplearning_HW.pdf.
+The documentation of this project is the Deeplearning_HW.pdf in the documentation folder.
 
 ## Usage
 
+All jupyter notebooks are found in the notebooks folder.
+
 - For Deep Dreaming run DeepDream.ipynb, use for this google collaboratory and before it upload resources to your google drive folder.
 - For using GAN to Deep Dreaming run GANDream.ipynb, also use google colab and for a dreams folder put some deep dreamed image, the output images will be in a folder with output name.
+- We implemented and modificated some pretrained network, these are also found in this folder.
 
 ## Methodology
 
@@ -60,6 +63,7 @@ This dataset was created from Dataset 2 with the following parameters of DeepDre
 - Iterations per recursion: [100,100,100]  
 - Step size: 0.02  
   
+
 Some sample images are provided [here](https://github.com/eeervin/deep_learning/tree/master/results/Dataset_NaturalDreams), we will use this dataset to create and test generative models.
 ![Sample](https://raw.githubusercontent.com/eeervin/deep_learning/master/results/Dataset_NaturalDreams/flower/flower_0012.jpg "Yes, that's a flower")
 
